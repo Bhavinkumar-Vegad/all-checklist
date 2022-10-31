@@ -56,8 +56,8 @@ Linkedin:- https://www.linkedin.com/in/bhavinkumar-vegad
   * [ ] Check tabs are working properly
   * [ ] Check for broken links and images
   * [ ] Check there is a home link on every screen/page
-  * [ ] Check there is a single <h1> element on the page
-  * [ ] Check the page have a <title> tag and a <meta description=””>
+  * [ ] Check there is a single "<h1>" element on the page
+  * [ ] Check the page have a "<title>" tag and a "<meta description=””>"
   * [ ] Check there is anything frustrating about any aspect of the UI
   * [ ] Check the logo size
   * [ ] Check if user click on logo user should be redirect to home page
