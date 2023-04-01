@@ -1,12 +1,12 @@
-##Layout and Design
+## Layout and Design
 
 * [ ] Is the layout consistent and visually appealing?
 
-* [ ]Are fonts and colors consistent throughout the site?
+* [ ] Are fonts and colors consistent throughout the site?
 
-* [ ]Are images high-quality and properly aligned?
+* [ ] Are images high-quality and properly aligned?
 
-##Navigation
+## Navigation
 
 * [ ] Is the navigation intuitive and easy to use?
 
