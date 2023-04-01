@@ -13,3 +13,12 @@ This checklist is for Navigation
 * [ ] Are all the links working?
 
 * [ ] Is the menu properly aligned and does it works correctly?
+
+## Checklist
+
+- [ ] Task 1
+  - Description of task 1
+- [ ] Task 2
+  - Description of task 2
+- [ ] Task 3
+  - Description of task 3
