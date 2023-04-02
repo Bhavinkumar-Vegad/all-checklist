@@ -31,3 +31,9 @@ This checklist is designed to help ensure that your website is optimized for per
 - [ ] Ensure that your website is mobile-friendly
     - Description: With more and more people accessing the web from mobile devices, it's important that your website is designed to work well on smaller screens.
 
+- Task 1
+  - Subpoint 1
+  - Subpoint 2
+- Task 2
+  - Subpoint 1
+  - Subpoint 2
