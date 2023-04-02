@@ -6,10 +6,12 @@ This checklist is designed to help ensure that your website is optimized for per
 
 ## Performance
 
-- [ ] Minify HTML, CSS, and JavaScript files
-    - Description: Minifying your files can reduce their size and speed up your website's load times.
-- [ ] Use a content delivery network (CDN) for static assets
-    - Description: A CDN can help distribute your website's static assets across multiple servers, improving download speeds for visitors in different geographic locations.
+### Performance testing is good for any webapp
+
+* [ ] Minify HTML, CSS, and JavaScript files
+    * Description: Minifying your files can reduce their size and speed up your website's load times.
+* [ ] Use a content delivery network (CDN) for static assets
+    * Description: A CDN can help distribute your website's static assets across multiple servers, improving download speeds for visitors in different geographic locations.
 
 ---
 
