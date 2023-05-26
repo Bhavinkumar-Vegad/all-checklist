@@ -1,4 +1,4 @@
-##Header Section:
+## Header Section:
 
 * [ ] Verify consistent display across all pages, including subpages.
 
@@ -20,7 +20,7 @@
 
 * [ ] Validate consistency of header across different browsers.
 
-##Hero Section:
+## Hero Section:
 
 * [ ] Verify visually appealing layout and design.
 
@@ -42,7 +42,7 @@
 
 * [ ] Test loading time of the hero section and optimize if necessary.
 
-##About Us Section:
+## About Us Section:
 
 * [ ] Verify that the about us section provides relevant and concise information about the company or organization.
 
@@ -64,7 +64,7 @@
 
 * [ ] Test the loading time of the section and optimize if necessary.
 
-##Services/Products Section:
+## Services/Products Section:
 
 * [ ] Verify that the services or products are clearly described and categorized.
 
@@ -86,7 +86,7 @@
 
 * [ ] Validate consistency of styling and alignment with other sections of the website.
 
-##Portfolio/Gallery Section:
+## Portfolio/Gallery Section:
 
 * [ ] Verify that the portfolio or gallery items are displayed in an organized and visually appealing manner.
 
@@ -108,7 +108,7 @@
 
 * [ ] Validate consistency of styling and alignment with other sections of the website.
 
-##Sidebar Section:
+## Sidebar Section:
 
 * [ ] Validate layout and alignment of sidebar content.
 
@@ -130,7 +130,7 @@
 
 * [ ] Test any forms or input fields within the sidebar.
 
-##Pricing Section:
+## Pricing Section:
 
 * [ ] Verify that the pricing section provides clear and accurate information about products or services.
 
@@ -152,7 +152,7 @@
 
 * [ ] Ensure that the pricing section aligns with the overall design and branding of the website.
 
-##Team/Staff Section:
+## Team/Staff Section:
 
 * [ ] Verify that the team/staff section includes accurate information about team members.
 
@@ -174,7 +174,7 @@
 
 * [ ] Ensure that the team/staff section aligns with the overall design and branding of the website.
 
-##Client/Partners Section:
+## Client/Partners Section:
 
 * [ ] Verify that the client/partners section includes accurate information about clients or partners.
 
@@ -196,7 +196,7 @@
 
 * [ ] Ensure that the client/partners section aligns with the overall design and branding of the website.
 
-##Testimonials/Reviews Section:
+## Testimonials/Reviews Section:
 
 * [ ] Verify that testimonials or reviews are displayed in a visually appealing and credible manner.
 
@@ -218,7 +218,7 @@
 
 * [ ] Validate consistency of styling and alignment with other sections of the website.
 
-##FAQ Section:
+## FAQ Section:
 
 * [ ] Verify that the FAQ section provides helpful and relevant questions and answers.
 
@@ -240,7 +240,7 @@
 
 * [ ] Ensure that the FAQ section is consistent with the overall design and styling of the website.
 
-##Footer Section:
+## Footer Section:
 
 * [ ] Confirm consistent display across all pages, including subpages.
 
