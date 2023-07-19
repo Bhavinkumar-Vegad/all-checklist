@@ -90,5 +90,3 @@ cd my-react-app
 ~~~
 npm start
 ~~~
-This checklist provides a basic setup for a React project on different operating systems. Keep in mind that depending on your specific requirements, you may need to install additional dependencies or configure additional tools.
-
