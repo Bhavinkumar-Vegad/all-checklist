@@ -1,12 +1,12 @@
 ##macOS:
 
-Install Homebrew (Package Manager):
+#Install Homebrew (Package Manager):
 *[ ] Open a terminal and run the following command:
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 
-Install Node.js and npm:
+#Install Node.js and npm:
 *[ ] Run the following command in the terminal:
 
 brew install node
@@ -17,7 +17,7 @@ node --version
 npm --version
 
 
-Install Angular CLI:
+#Install Angular CLI:
 *[ ] Run the following command in the terminal:
 
 npm install -g @angular/cli
