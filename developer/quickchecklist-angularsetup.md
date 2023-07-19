@@ -1,39 +1,39 @@
 ##macOS:
 
 #Install Homebrew (Package Manager):
-*[ ] Open a terminal and run the following command:
+* [ ]  Open a terminal and run the following command:
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 
 #Install Node.js and npm:
-*[ ] Run the following command in the terminal:
+* [ ]  Run the following command in the terminal:
 
 brew install node
 
-*[ ] Verify the installation by running the following commands:
+* [ ]  Verify the installation by running the following commands:
 
 node --version
 npm --version
 
 
 #Install Angular CLI:
-*[ ] Run the following command in the terminal:
+* [ ]  Run the following command in the terminal:
 
 npm install -g @angular/cli
 
-*[ ] Verify the installation by running the following command:
+* [ ]  Verify the installation by running the following command:
 
 ng --version
 
 
 Create a new Angular project:
-*[ ] Open a terminal and navigate to the desired directory for your project.
-*[ ] Run the following command to create a new Angular project:
+* [ ]  Open a terminal and navigate to the desired directory for your project.
+* [ ]  Run the following command to create a new Angular project:
 
 ng new my-angular-project
 
-*[ ] Answer the prompts for project settings (such as routing and stylesheet format).
+* [ ]  Answer the prompts for project settings (such as routing and stylesheet format).
 
 Navigate to the project directory:
 
@@ -44,39 +44,39 @@ Serve the Angular application:
 
 ng serve
 
-*[ ] Open a web browser and visit `http://localhost:4200` to see your application running.
+* [ ]  Open a web browser and visit `http://localhost:4200` to see your application running.
 
 ##Ubuntu/Linux:
 
 Install Node.js and npm:
-*[ ] Open a terminal and run the following commands:
+* [ ]  Open a terminal and run the following commands:
 
 sudo apt update
 sudo apt install nodejs npm
 
-*[ ] Verify the installation by running the following commands:
+* [ ]  Verify the installation by running the following commands:
 
 node --version
 npm --version
 
 
 Install Angular CLI:
-*[ ] Run the following command in the terminal:
+* [ ]  Run the following command in the terminal:
 
 sudo npm install -g @angular/cli
 
-*[ ] Verify the installation by running the following command:
+* [ ]  Verify the installation by running the following command:
 
 ng --version
 
 
 Create a new Angular project:
-*[ ] Open a terminal and navigate to the desired directory for your project.
-*[ ] Run the following command to create a new Angular project:
+* [ ]  Open a terminal and navigate to the desired directory for your project.
+* [ ]  Run the following command to create a new Angular project:
 
 ng new my-angular-project
 
-*[ ] Answer the prompts for project settings (such as routing and stylesheet format).
+* [ ]  Answer the prompts for project settings (such as routing and stylesheet format).
 
 Navigate to the project directory:
 
@@ -87,4 +87,4 @@ Serve the Angular application:
 
 ng serve
 
-*[ ] Open a web browser and visit `http://localhost:4200` to see your application running.
+* [ ]  Open a web browser and visit `http://localhost:4200` to see your application running.
