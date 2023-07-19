@@ -7,7 +7,6 @@ Install Node.js and npm:
 node --version
 npm --version
 
-
 Install Angular CLI:
 *[ ] Open a command prompt and run the following command:
 
