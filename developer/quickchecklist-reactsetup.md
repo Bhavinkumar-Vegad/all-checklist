@@ -1,4 +1,5 @@
 ##Windows OS:
+
 ###Install Node.js:
 * [ ] Go to the Node.js website (https://nodejs.org/) and download the LTS version for Windows.
 * [ ] Run the downloaded installer and follow the installation instructions.
@@ -26,6 +27,7 @@ cd my-react-app
 npm start
 ~~~
 ##macOS:
+
 ###Install Homebrew:
 * [ ] Open a terminal.
 * [ ] Run the following command to install Homebrew:
@@ -59,6 +61,7 @@ cd my-react-app
 npm start
 ~~~
 ##Ubuntu/Linux:
+
 ###Install Node.js:
 * [ ] Open a terminal.
 * [ ] Run the following commands to install Node.js using NodeSource's Node.js Binary Distributions:
