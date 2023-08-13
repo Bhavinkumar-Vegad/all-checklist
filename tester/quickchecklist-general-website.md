@@ -1,4 +1,3 @@
-Quickchecklist for General website
 ## Checklist for Content:
 * [ ] Check that all pages have relevant and engaging content that aligns with the website's purpose.
 * [ ] Check for spelling and grammatical errors.
