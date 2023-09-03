@@ -29,7 +29,7 @@ Existing/Freelancing Website Kickoff Checklist:
 ## SEO and Analytics:
 
 * [ ] Review the website's current search engine ranking and SEO performance.
-* [ ] Plan for SEO optimization, including on*page SEO elements and metadata.
+* [ ] Plan for SEO optimization, including on-page SEO elements and metadata.
 * [ ] Set up or review the integration of analytics tools (e.g., Google Analytics) for tracking website performance.
 
 ## Communication and Collaboration:
@@ -49,17 +49,17 @@ Existing/Freelancing Website Kickoff Checklist:
 * [ ] Set up a development environment with the necessary tools and dependencies.
 * [ ] Implement the planned changes or updates to the website.
 * [ ] Test the website thoroughly across different browsers and devices.
-* [ ] Test interactive elements, forms, and any e*commerce functionality.
+* [ ] Test interactive elements, forms, and any e-commerce functionality.
 * [ ] Implement proper error handling and user feedback mechanisms.
 
 ## Launch Plan:
 
 * [ ] Choose an appropriate launch date and time.
 * [ ] Update DNS records if necessary to point to the new server or platform.
-* [ ] Double*check all content, links, and forms before making the website live.
+* [ ] Double-check all content, links, and forms before making the website live.
 * [ ] Monitor the website closely during the initial launch period for any issues.
 
-## Post*Launch Activities:
+## Post-Launch Activities:
 
 * [ ] Monitor website performance and user feedback after the launch.
 * [ ] Address any issues or bugs reported by users promptly.

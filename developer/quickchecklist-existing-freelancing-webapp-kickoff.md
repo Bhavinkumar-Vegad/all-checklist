@@ -26,7 +26,7 @@ Existing/Freelance Web Application Kickoff Checklist:
 
 ## Compatibility and Dependencies:
 
-* [ ] Check for compatibility issues with existing third*party services or APIs.
+* [ ] Check for compatibility issues with existing third-party services or APIs.
 * [ ] Identify any dependencies that need to be updated or replaced.
 * [ ] Verify the compatibility of the new features with different browsers and devices.
 
@@ -66,8 +66,8 @@ Existing/Freelance Web Application Kickoff Checklist:
 * [ ] Perform final tests in the production environment to ensure stability.
 * [ ] Coordinate with the client for the deployment schedule.
 
-## Post*Launch Support:
+## Post-Launch Support:
 
 * [ ] Monitor the application closely after the changes are live.
 * [ ] Address any issues or bugs reported by users promptly.
-* [ ] Offer support and assistance to the client during the initial post*launch phase.
+* [ ] Offer support and assistance to the client during the initial post-launch phase.
