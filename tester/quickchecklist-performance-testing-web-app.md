@@ -32,6 +32,14 @@
 * [ ] Monitor and log errors during load tests for analysis.
 * [ ] Define a strategy for notifying administrators about critical errors.
 
+## Core Web Vitals:
+
+* [ ] Measure Largest Contentful Paint (LCP) and keep it within the recommended threshold.
+* [ ] Measure Interaction to Next Paint (INP) or First Input Delay and keep pages responsive.
+* [ ] Measure Cumulative Layout Shift (CLS) and prevent unexpected layout jumps.
+* [ ] Test Core Web Vitals on mobile and desktop using lab and field data.
+* [ ] Fix render-blocking scripts, unoptimized fonts, and unsized images that hurt vitals.
+
 ## Performance Monitoring:
 
 * [ ] Set up performance monitoring tools to track key metrics over time.

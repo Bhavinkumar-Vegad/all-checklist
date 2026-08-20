@@ -42,4 +42,17 @@
 ## Checklist for Analytics:
 * [ ] Check that the website has analytics software installed, such as Google Analytics.
 * [ ] Check that the analytics software is properly configured to track relevant metrics.
-* [ ] Check that the analytics software is properly integrated with other tools, such as AdWords and Search Console.
+* [ ] Check that the analytics software is properly integrated with other tools, such as Google Ads and Search Console.
+* [ ] Check that cookie consent is respected and analytics only fire after the user accepts, if required.
+
+## Checklist for Legal and Trust:
+* [ ] Check that Privacy Policy, Terms, and cookie policy pages are linked in the footer.
+* [ ] Check that contact details, address, or support email are accurate.
+* [ ] Check that forms show a clear success or failure message after submit.
+* [ ] Check that a custom 404 page exists and includes a path back to home.
+
+## Checklist for Accessibility:
+* [ ] Check that all interactive elements can be used with a keyboard.
+* [ ] Check that heading order is logical (one h1, then h2, then h3).
+* [ ] Check that form fields have visible labels, not only placeholders.
+* [ ] Check that error messages are associated with the related field.

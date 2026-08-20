@@ -80,6 +80,14 @@
 
    * [ ] Discuss the communication and reporting requirements for the project
 
+## Success Metrics:
+
+   * [ ] Agree how success will be measured after launch (KPIs, conversion, time saved, error rate)
+
+   * [ ] Confirm who owns reporting and how often results will be reviewed
+
+   * [ ] Capture out-of-scope items so they do not silently enter the first release
+
 ## Post-Call Follow-Up:
 
    * [ ] Summarize the key points discussed during the call and share it with the client for their review and confirmation
@@ -87,3 +95,5 @@
    * [ ] Identify any follow-up actions, such as additional meetings or information gathering
 
    * [ ] Provide a clear next steps and timeline for the project
+
+   * [ ] Share a written requirements summary and ask the client to confirm in writing

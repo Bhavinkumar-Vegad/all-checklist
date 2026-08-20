@@ -1,9 +1,8 @@
-
 This Checklist will helpful for verify your website's General UI & General functionality. In future I'll add more points and modifiy all the points. If you have any points which are left then you can contact me ~
 Gmail:- bhavinkumarvegad@gmail.com
 Linkedin:- https://www.linkedin.com/in/bhavinkumar-vegad
 ## Quick/General Checklist for Website:
-  * [ ] Check Font family, Font styles , Font size, Font weight, Font colour
+  * [ ] Check Font family, Font styles, Font size, Font weight, Font colour
   * [ ] Check CSS properties of an element
   * [ ] Check Padding
   * [ ] Check Alignment of Image and Content
@@ -22,7 +21,7 @@ Linkedin:- https://www.linkedin.com/in/bhavinkumar-vegad
   * [ ] Check if the disabled fields are not accepting any input
   * [ ] Check the border and border radius for buttons
   * [ ] Check text on the button is in Upper case or Lower case
-  * [ ] Check curser's type on button
+  * [ ] Check cursor's type on button
   * [ ] Check if icon of the dropdown changes when the dropdown is expanded and collapsed
   * [ ] Check if the already selected value is highlighted in a separate color when the dropdown is expanded
   * [ ] Check the checkboxes are designed as per the website theme
@@ -39,7 +38,7 @@ Linkedin:- https://www.linkedin.com/in/bhavinkumar-vegad
   * [ ] Check visited link state if user once visited then color should be change
   * [ ] Check Error message show when internet is off
   * [ ] Check proper content
-  * [ ] Chcek if image is not avaliable then show "alt"
+  * [ ] Check if image is not available then show "alt"
   * [ ] Check Animation is work properly or not
   * [ ] Check Drag function
   * [ ] Check Swipe function
@@ -47,18 +46,26 @@ Linkedin:- https://www.linkedin.com/in/bhavinkumar-vegad
   * [ ] Check status bar
   * [ ] Check page redirect links
   * [ ] Check pop-notification is work or not
-  * [ ] Check icon proper visiable or not (size,color)
+  * [ ] Check icon proper visible or not (size,color)
   * [ ] Check Tab title is match to page or not
   * [ ] Check menu navigation
-  * [ ] Check differnet browser support
-  * [ ] Check differnet opreating system(OS) support
+  * [ ] Check different browser support
+  * [ ] Check different operating system(OS) support
   * [ ] Check different device support
   * [ ] Check tabs are working properly
   * [ ] Check for broken links and images
   * [ ] Check there is a home link on every screen/page
   * [ ] Check there is a single "h1" element on the page
-  * [ ] Check the page have a "title" tag and a "meta description=”Checklist”"
+  * [ ] Check the page have a "title" tag and a "meta description"
   * [ ] Check there is anything frustrating about any aspect of the UI
   * [ ] Check the logo size
   * [ ] Check if user click on logo user should be redirect to home page
   * [ ] Check scroll bar function
+  * [ ] Check the site loads over HTTPS with a valid SSL certificate
+  * [ ] Check favicon is visible in the browser tab
+  * [ ] Check cookie consent or privacy banner appears and works as expected
+  * [ ] Check 404 and other error pages display a helpful message and a way back home
+  * [ ] Check keyboard navigation works for menus, buttons, and forms
+  * [ ] Check color contrast is readable for body text and buttons
+  * [ ] Check mobile menu opens, closes, and does not overlap content
+  * [ ] Check forms can be submitted with Enter and show a loading or success state

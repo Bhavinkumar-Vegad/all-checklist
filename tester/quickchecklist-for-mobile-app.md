@@ -49,6 +49,13 @@
 * [ ] Validate that UI elements adapt to various languages and scripts.
 * [ ] Test currency and unit conversions for international users.
 
+## Interruptions and Device Features:
+* [ ] Test incoming call, SMS, and notification interruptions during key flows.
+* [ ] Test app behavior when switching between Wi-Fi and mobile data.
+* [ ] Verify camera, microphone, location, and notification permissions can be granted, denied, and changed later.
+* [ ] Test biometric or PIN unlock if the app supports it.
+* [ ] Verify deep links and app links open the correct screen.
+
 ## Battery and Performance Impact:
 * [ ] Test app impact on device battery life.
 * [ ] Measure app performance impact on device resources.

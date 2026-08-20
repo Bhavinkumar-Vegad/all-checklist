@@ -43,6 +43,20 @@
 * [ ] Validate that UI elements adapt to various languages and scripts.
 * [ ] Test currency and unit conversions for international users.
 
+## Accessibility:
+* [ ] Verify keyboard-only navigation works for menus, forms, and dialogs.
+* [ ] Check color contrast for text, buttons, and error states.
+* [ ] Confirm images, icons, and buttons have meaningful alt text or accessible names.
+* [ ] Test with a screen reader on at least one primary user flow.
+* [ ] Check focus order and visible focus styles on interactive elements.
+
+## Browser, Device, and Network:
+* [ ] Test Chrome, Firefox, Safari, and Edge on current versions.
+* [ ] Test a mobile viewport and a tablet viewport in addition to desktop.
+* [ ] Verify the app still works on a slow 3G or throttled network.
+* [ ] Check behavior when the network is lost and restored.
+* [ ] Confirm cookies, local storage, and session storage behave as expected after refresh.
+
 ## Documentation and Reporting:
 * [ ] Document testing strategies, scenarios, and test cases.
 * [ ] Provide detailed reports on testing results, issues found, and resolutions.
