@@ -1,28 +1,44 @@
-## Before You Write:
+## Before Drafting:
 
-* [ ] Confirm the audience, goal, and where this piece will live.
-* [ ] Check existing content so you do not duplicate a live page.
-* [ ] Agree the primary keyword or topic cluster if this is SEO content.
-* [ ] Gather facts, screenshots, and quotes you are allowed to use.
+* [ ] Search the CMS for the same title/intent; 301 or consolidate if a zombie post exists.
+* [ ] Brief: audience, search/social intent, primary URL, CTA, owner for facts.
+* [ ] SME interview or source list for numbers; no invented stats.
+* [ ] Competitor URLs: you are not publishing a thin rewrite of their H2s.
 
-## Draft Quality:
+## Draft:
 
-* [ ] Opening explains who this is for and what they will get.
-* [ ] Headings scan well for a busy reader.
-* [ ] Claims are accurate and sourced if they are numbers.
-* [ ] CTA matches the stage of the funnel.
+* [ ] Working title ≠ final SEO title; both are written.
+* [ ] Intro is not “In today’s fast-paced world”.
+* [ ] Product names, version numbers, and UI labels match production (screenshot date).
+* [ ] Code samples run; commands are copy-pasteable; warnings for destructive flags.
+* [ ] Affiliate/sponsored disclosure is at the top if required.
 
-## Review:
+## Legal / Brand:
 
-* [ ] Spelling, grammar, and product names are correct.
-* [ ] Legal, brand, and product owners have signed off if required.
-* [ ] Images have rights cleared and alt text.
-* [ ] Links go to the current URLs.
+* [ ] Claims (“#1”, “guarantee”, medical/financial) have approval.
+* [ ] Customer logos and quotes: permission on file.
+* [ ] Before/after pricing: not misleading vs current public price.
 
-## Publish:
+## CMS Fields People Leave Empty:
 
-* [ ] Title, slug, meta, and featured image are set.
-* [ ] Category, tags, and author are correct.
-* [ ] Indexing settings are correct for a public page.
-* [ ] Share preview (Open Graph / social card) looks right.
-* [ ] Announce in the planned channels and add to the content calendar.
+* [ ] Slug will not change after you start building backlinks (or 301 is planned).
+* [ ] Canonical, noindex (if gated), and sitemap inclusion.
+* [ ] Author bio, review date, “last updated”.
+* [ ] OG title/description/image 1200×630; image file is not 4MB.
+* [ ] Categories/tags are the real taxonomy, not 15 random tags.
+* [ ] Internal links to money pages and to the next article in the cluster.
+
+## Pre-Publish QA:
+
+* [ ] Links: no localhost, staging, UTM on internal links unless you want them.
+* [ ] Images: alt, crop on mobile, no unlicensed stock watermark.
+* [ ] Tables scroll on mobile; footnotes work.
+* [ ] Embeds (YouTube, tweets) are allowed to load under cookie policy.
+* [ ] Preview as unpublished; logged-out view if the site personalizes.
+
+## Launch:
+
+* [ ] Index/noindex matches intent (resource hub vs thank-you).
+* [ ] Announce: email, social, in-app, sales enablement — owners assigned.
+* [ ] GSC URL inspection if it is a money page.
+* [ ] Calendar: update reminder if this is a yearly benchmark post.

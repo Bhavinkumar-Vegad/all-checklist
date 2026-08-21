@@ -123,10 +123,16 @@ npm run dev
 ~~~
 * [ ] Open the local URL shown in the terminal (usually `http://localhost:5173`) in your browser.
 
-## After Setup:
+## After Setup (the parts that bite you in week two):
 
 * [ ] Confirm hot reload works when you edit a file in `src`.
-* [ ] Add a `.env` file for environment variables and prefix public values with `VITE_`.
-* [ ] Initialize git and create the first commit if the project is new.
-* [ ] Decide on a folder structure for components, pages, hooks, and assets.
-* [ ] Add a linter and formatter (`eslint` and `prettier`) before writing feature code.
+* [ ] Add `.env` / `.env.example`; only `VITE_` keys are exposed to the browser — never put a private API secret there.
+* [ ] `import.meta.env.PROD` vs `DEV`: API base URL is not hardcoded to localhost in the production build.
+* [ ] Initialize git; `.gitignore` includes `dist`, `.env`, and editor folders.
+* [ ] Path alias (`@/`) in both Vite and `jsconfig`/`tsconfig` so IDE and build agree.
+* [ ] ESLint + Prettier + `eslint-config-prettier` so the two do not fight; run on CI, not only save.
+* [ ] React Router (or your router) `BrowserRouter` basename if the app is not at `/`.
+* [ ] `index.html` title and favicon are not the Vite defaults before the first client demo.
+* [ ] Strict Mode double-invokes effects in dev — do not “fix” that by removing Strict Mode to hide a subscription bug.
+* [ ] Decide query/data library (React Query, etc.) before you invent five `useEffect` fetchers.
+* [ ] `npm run build` and preview the **production** bundle once; some bugs exist only in prod minify.

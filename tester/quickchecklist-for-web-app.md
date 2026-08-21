@@ -1,63 +1,70 @@
-## User Interface (UI):
-* [ ] Check the design and layout for consistency and aesthetics.
-* [ ] Validate proper alignment and spacing of UI elements.
-* [ ] Test the responsiveness of UI components on different screen sizes.
-* [ ] Ensure legibility and readability of text and content.
-* [ ] Verify consistent branding and styling throughout the app.
-* [ ] Test interactive elements, such as buttons, forms, and navigation menus.
+## Auth and Session (where most “it works on my machine” bugs hide):
 
-## Functionality:
-* [ ] Test all links, buttons, and interactive elements for proper functionality.
-* [ ] Validate input forms and data submission.
-* [ ] Test dynamic content updates and real-time features.
-* [ ] Verify proper error handling and user feedback.
-* [ ] Test user authentication and authorization processes.
-* [ ] Validate any automated workflows or user journeys.
+* [ ] Login, logout, refresh, and “open in a second tab” keep a single coherent session (or you document that two tabs are unsupported).
+* [ ] Expired session: user sees a login, not a JSON dump or infinite spinner; deep link is restored after login if the product claims that.
+* [ ] Password reset: token expires, cannot be reused, does not leak whether the email exists unless product requires it.
+* [ ] Role A cannot open role B’s URL by pasting it; API is 403 or 404, not 200 with an empty body that looks like “no data”.
+* [ ] Impersonation / “view as user” (if any) is banner-visible and audited.
 
-## Performance:
-* [ ] Test page load times and overall app responsiveness.
-* [ ] Verify efficient resource utilization, including memory and CPU.
-* [ ] Evaluate database queries and optimize slow-performing queries.
-* [ ] Test under different network conditions and simulate varying user loads.
-* [ ] Check for memory leaks and resource depletion over time.
+## Forms and Data:
 
-## Compatibility:
-* [ ] Test the web app on different browsers and versions.
-* [ ] Verify compatibility with various operating systems (Windows, macOS, Linux).
-* [ ] Test compatibility with different devices, such as desktops, laptops, and tablets.
-* [ ] Validate accessibility for users with disabilities (WCAG compliance).
-* [ ] Test compatibility with different screen readers and assistive technologies.
+* [ ] Required fields, min/max, regex, and server-side reject of what the UI allows (disable JS and submit).
+* [ ] Duplicate submit (double click, Enter twice) does not create two orders/tickets.
+* [ ] Unsaved changes: navigate away warning on long forms if other screens have it.
+* [ ] File upload: type, size, virus-ish payload, filename with emoji/spaces; download the same file.
+* [ ] Date pickers: timezone of user vs server; “today” around midnight UTC.
+* [ ] Money: 0.10 + 0.20, rounding, thousand separators, trailing zeros.
+* [ ] Empty, 1 row, page-size rows, and last page of pagination (including “page 99” of 2).
+* [ ] Filters + sort + search together; “clear filters” actually clears query params.
+* [ ] CSV/Excel export opens and matches the grid (formulas escaped).
 
-## Security:
-* [ ] Conduct security testing to identify vulnerabilities (e.g., XSS, CSRF).
-* [ ] Verify proper input validation and sanitization.
-* [ ] Test user data protection and encryption mechanisms.
-* [ ] Validate secure communication over HTTPS.
-* [ ] Perform penetration testing and vulnerability scanning.
-* [ ] Check for proper authentication and authorization.
+## UI States:
 
-## Localization and Internationalization:
-* [ ] Test the app with different language settings.
-* [ ] Verify proper text translation and layout adjustments.
-* [ ] Test date, time, and number formats for different locales.
-* [ ] Validate that UI elements adapt to various languages and scripts.
-* [ ] Test currency and unit conversions for international users.
+* [ ] Loading, empty, error, forbidden, not found — each has copy and a next action.
+* [ ] Toasts do not cover the primary button on mobile; they can be dismissed.
+* [ ] Modals: scroll lock, close on Escape, focus return, background not clickable if that is the spec.
+* [ ] Sticky header does not hide focused inputs or in-page anchors.
+* [ ] Dark mode / high contrast if shipped: charts and borders still visible.
 
-## Accessibility:
-* [ ] Verify keyboard-only navigation works for menus, forms, and dialogs.
-* [ ] Check color contrast for text, buttons, and error states.
-* [ ] Confirm images, icons, and buttons have meaningful alt text or accessible names.
-* [ ] Test with a screen reader on at least one primary user flow.
-* [ ] Check focus order and visible focus styles on interactive elements.
+## Responsive and Browsers:
 
-## Browser, Device, and Network:
-* [ ] Test Chrome, Firefox, Safari, and Edge on current versions.
-* [ ] Test a mobile viewport and a tablet viewport in addition to desktop.
-* [ ] Verify the app still works on a slow 3G or throttled network.
-* [ ] Check behavior when the network is lost and restored.
-* [ ] Confirm cookies, local storage, and session storage behave as expected after refresh.
+* [ ] 320, 375, 768, 1024, 1440 widths; 200% zoom.
+* [ ] Safari (iOS) vs Chrome: `100vh`, date inputs, position sticky, autofill yellow.
+* [ ] Back/forward cache: after Back, form is not silently stale vs a paid order.
+* [ ] Print stylesheet if users print invoices/reports.
 
-## Documentation and Reporting:
-* [ ] Document testing strategies, scenarios, and test cases.
-* [ ] Provide detailed reports on testing results, issues found, and resolutions.
-* [ ] Share testing insights with development and QA teams for continuous improvement.
+## Realtime / Async:
+
+* [ ] Websocket/SSE reconnect after laptop sleep.
+* [ ] Two users edit the same record: last-write, lock, or conflict message — match the spec.
+* [ ] Notifications: badge count vs list; mark-read does not mark the wrong tenant.
+
+## Performance (practical, not “make it fast”):
+
+* [ ] Slow 3G: primary path usable; you see which call blocks TTI.
+* [ ] Large list: virtualization or pagination; 1k rows does not freeze the tab.
+* [ ] Memory: 15 minutes of SPA navigation without leaking (heap snapshot if it feels sticky).
+* [ ] Cached HTML + new JS after deploy: users are not stuck on a white screen (chunk 404).
+
+## Security smoke (QA-level, not a pentest):
+
+* [ ] HTTPS, no mixed content on the logged-in shell.
+* [ ] XSS: `<script>alert(1)</script>` in a comment/name field is stored as text.
+* [ ] Cookie flags on session cookie (Secure, HttpOnly) in DevTools.
+* [ ] Direct object id in URL swapped to another user’s.
+
+## i18n:
+
+* [ ] Pseudo-locale or German long strings: buttons do not overflow.
+* [ ] RTL if you ship Arabic/Hebrew: alignment and chevrons.
+* [ ] `1.234,56` vs `1,234.56`; Monday-first vs Sunday-first calendars.
+
+## Accessibility (minimum on every story):
+
+* [ ] Keyboard through the new flow; visible focus.
+* [ ] Name, role, value on custom widgets (dropdown not a non-focusable div).
+* [ ] Form errors announced and tied to fields.
+
+## Reporting:
+
+* [ ] Bugs include URL, role, SHA/build, request id from network tab, and whether JS was disabled for validation tests.

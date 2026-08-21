@@ -1,27 +1,50 @@
-## Message:
+## Above the Fold:
 
-* [ ] The headline states the offer or outcome in plain language.
-* [ ] The subhead explains who it is for and why it matters now.
-* [ ] There is one primary call to action, not five competing ones.
-* [ ] Proof is nearby: logos, numbers, quotes, or a short demo.
+* [ ] Headline is specific (“Payroll in 12 minutes for teams under 50”) not “Welcome to the future”.
+* [ ] Subhead names who it is for and the constraint (time, industry, role).
+* [ ] Primary CTA is one verb + noun; secondary is visually weaker (text link), not two equal buttons.
+* [ ] Hero image/video does not delay LCP past ~2.5s on mobile 4G; poster frame if video.
+* [ ] Trust: logos, count, or quoted result near the CTA; fake “As seen in” is not used.
 
-## Page Build:
+## Offer Integrity:
 
-* [ ] Hero, benefits, how it works, proof, FAQ, and CTA are all present if they apply.
-* [ ] Form asks only for fields you will use.
-* [ ] Buttons describe the action ("Get the checklist", not only "Submit").
-* [ ] Mobile layout keeps the CTA reachable without hunting.
+* [ ] Price, trial length, “no credit card”, and what happens at day 15 match billing and legal.
+* [ ] Coupon in the URL still works; expired promo is not the H1.
+* [ ] Geographic restrictions (cannot sell in X) are stated before the form.
 
-## Trust and Legal:
+## Form:
 
-* [ ] Privacy note sits near the form if you collect email.
-* [ ] Testimonials are real and attributed.
-* [ ] Pricing or "contact us" is honest about what happens next.
+* [ ] Fields are the minimum; each extra field needs a reason (sales asked vs actually used).
+* [ ] Work email vs personal: validation matches GTM/CRM routing.
+* [ ] Phone: country code; do not strip leading zeros if you store as string.
+* [ ] Error on submit is inline; 500 from HubSpot/Marketo is not a blank button.
+* [ ] Double-submit is blocked; success is a thank-you URL (for ads conversion) not only a JS toast.
+* [ ] Hidden fields: UTM, gclid, referrer persist through the thank-you page into CRM.
+* [ ] GDPR/consent checkbox is unchecked by default if required; copy names what they get.
 
-## Launch Checks:
+## Message Match (ads → page):
 
-* [ ] Links, form submit, and thank-you page all work.
-* [ ] UTM parameters are documented for campaigns.
-* [ ] Page speed is acceptable on mobile.
-* [ ] Pixel or analytics events fire on view and on convert.
-* [ ] 404s, broken images, and leftover lorem ipsum are gone.
+* [ ] Keyword/ad headline and page H1 share the same phrase.
+* [ ] Promo code in the ad is visible on the page.
+* [ ] Audience (e.g. “for dentists”) is not sent to a generic homepage.
+
+## Proof and FAQ:
+
+* [ ] Testimonials have name, role, company; you have permission.
+* [ ] Case study numbers are the approved ones (finance/legal).
+* [ ] FAQ answers objections from sales call notes, not filler.
+
+## Tracking:
+
+* [ ] Thank-you page is excluded from the ad “view” conversion or you use a distinct event.
+* [ ] Pixel fires once; GTM preview on a cold session.
+* [ ] Form abandon vs submit events are named so ops can debug.
+* [ ] Call tracking numbers if you use them do not break SEO duplicate if this URL is indexed — decide index/noindex.
+
+## QA:
+
+* [ ] Mobile: CTA not covered by chat widget / cookie banner.
+* [ ] Cookie banner: CTA still clickable; consent mode if you claim ads measurement.
+* [ ] 404s on nav; logo goes to the right home for this campaign microsite.
+* [ ] Spellcheck product names; trademark symbols if brand requires.
+* [ ] Social card (Slack/iMessage/LinkedIn debugger) matches the campaign.

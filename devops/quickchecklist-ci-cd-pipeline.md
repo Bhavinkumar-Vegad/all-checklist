@@ -1,27 +1,49 @@
-## Pipeline Design:
+## Triggers:
 
-* [ ] Source is built on every push or pull request to protected branches.
-* [ ] Stages are clear: lint, test, build, scan, deploy.
-* [ ] Failed stages stop the pipeline unless skipped with a documented reason.
-* [ ] Secrets are stored in the CI secret store, not in YAML.
+* [ ] Every PR to protected branches; tags; and a nightly if you have flaky-slow suites you still need.
+* [ ] Fork PRs from outside cannot access production secrets (no `pull_request_target` with secrets unless you know the exploit).
+* [ ] `repository_dispatch` / `workflow_dispatch` that deploy production are not callable with a widely shared token.
 
-## Quality Gates:
+## Pipeline Shape:
 
-* [ ] Unit tests run on every change.
-* [ ] A build artifact is produced once and reused for later stages.
-* [ ] Dependency or image scanning runs on a schedule and on main.
-* [ ] Preview or staging deploy is available for UI review when needed.
+* [ ] Lint → unit → build → SCA/SAST → (optional e2e) → publish artifact → deploy.
+* [ ] Fail-fast on lint/unit; e2e is not the first gate for a typo.
+* [ ] Same artifact is promoted; you do not `npm run build` again on the prod runner with different env.
+* [ ] Matrix OS/Node only where it matters; you are not paying for 12 redundant jobs.
 
-## Deploy:
+## Supply Chain:
 
-* [ ] Production deploy is manual approval or a protected environment.
-* [ ] Deploy is idempotent and tagged with a git SHA.
-* [ ] Health check runs after deploy and fails the job if the app is down.
-* [ ] Rollback to the previous artifact is documented and tested.
+* [ ] Dependencies pinned or lockfile committed; `npm ci` / `pip install -r` equivalent, not “latest”.
+* [ ] Actions/orbs pinned to SHA, not `@v4` floating, for deploy jobs.
+* [ ] OIDC to cloud (no long-lived AWS keys in GitHub secrets) if you can.
+* [ ] SBOM or `npm audit` / `osv-scanner` on main; license allowlist if legal requires it.
+* [ ] Secrets scanning (gitleaks) on PRs.
 
-## Operations:
+## Tests in CI:
 
-* [ ] Logs for pipeline runs are retained long enough to debug.
-* [ ] Notifications go to the right channel on failure.
-* [ ] Only required people can change production workflow files.
-* [ ] Document how to replay a job and how to skip a flaky test the right way.
+* [ ] Unit tests do not need the real VPN; they use fixtures.
+* [ ] Integration tests use ephemeral DB/container; they do not share a staging schema with humans.
+* [ ] Flakes: quarantine with a ticket, not `retry: 5` forever.
+* [ ] Coverage gate only if you maintain it; a lying 90% on untested files is worse than none.
+
+## Deploy Jobs:
+
+* [ ] Environment protection: required reviewers on `production`.
+* [ ] Concurrency: one prod deploy at a time; cancelled in-progress is understood.
+* [ ] Migrations job is explicit and ordered vs app rollout.
+* [ ] After deploy, readiness is actually ready (health/ready 200, or your agreed ready status). Do not treat a cached public `/` as proof.
+* [ ] Notifications: fail to Slack/Teams with SHA, actor, and link; success is quieter.
+
+## What Not to Do:
+
+* [ ] `continue-on-error: true` on tests.
+* [ ] Echoing secrets (`set -x` with `curl -H "Authorization: $TOKEN"`).
+* [ ] Deploying from a contributor’s branch without review.
+* [ ] Using `latest` tag as the only prod pin.
+
+## Operability:
+
+* [ ] Logs retained ≥ 30 days for prod deploys.
+* [ ] You can re-run a failed job on the same SHA.
+* [ ] README: how to skip a job the right way (empty commit vs `ci skip` policy).
+* [ ] Self-hosted runners: labels, who patches the box, and they are not world-writable.

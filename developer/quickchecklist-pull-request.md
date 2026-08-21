@@ -1,37 +1,58 @@
-## Prepare the Branch:
+## Branch Hygiene:
 
-* [ ] Create the branch from the latest main or agreed base branch.
-* [ ] Keep the branch focused on one feature, bug, or chore.
-* [ ] Rebase or merge the base branch so the pull request is not far behind.
-* [ ] Remove local-only files, IDE settings, and generated artifacts from the commit.
+* [ ] Branch was cut from the latest `main`/`develop` today, not from a week-old local copy.
+* [ ] Branch name matches team pattern (`fix/INV-1842-tax-rounding`, not `final-final-2`).
+* [ ] One concern per PR; extract drive-by refactors into a follow-up.
+* [ ] `git status` is clean: no `.DS_Store`, `Thumbs.db`, `.idea/`, `*.iml`, or local `.env`.
+* [ ] `package-lock.json` / `yarn.lock` / `pnpm-lock.yaml` is committed if you changed dependencies, and only that lockfile.
+* [ ] You did not `git add .` after running a formatter on the whole repo unless that was the task.
 
-## Write a Clear Pull Request:
+## Description That Saves Review Time:
 
-* [ ] Use a title that states the outcome, for example "Fix checkout tax rounding".
-* [ ] Describe the problem, the solution, and any trade-offs in the description.
-* [ ] Link the ticket, design, or related pull requests.
-* [ ] List test steps a reviewer can follow locally or on a preview URL.
-* [ ] Call out breaking changes, migrations, and required environment variables.
+* [ ] Title is imperative and specific: “Prevent duplicate invoice on payment webhook retry”.
+* [ ] First paragraph is the user/business problem, then the approach.
+* [ ] Screenshots: before/after for UI; include mobile width if the change is responsive.
+* [ ] Test plan lists exact URLs, users/roles, and the one edge case you worry about.
+* [ ] Feature flag name and default (`off` in production until enablement) are written.
+* [ ] New env vars: name, example value, which environments need them, what happens if missing.
+* [ ] DB migration file names are listed and whether they lock tables.
+* [ ] If this is user-visible, the description says what QA should retest and what support should expect (moved button, new error, flag default).
 
-## Self Review:
+## Secrets and Accidental Commits:
 
-* [ ] Read your own diff before requesting review.
-* [ ] Confirm you did not commit `.env` files, API keys, or customer data.
-* [ ] Check screenshots or recordings are included for UI changes.
-* [ ] Verify new or changed APIs are documented.
-* [ ] Confirm database migrations are backward compatible or have a rollback plan.
+* [ ] Search the diff for `AKIA`, `ghp_`, `sk_live`, `BEGIN PRIVATE`, `password=`, `api_key`.
+* [ ] No production dump, customer CSV, or HAR file with cookies.
+* [ ] No `console.log` of the whole response object on an auth endpoint.
+* [ ] `.env.example` was updated instead of committing `.env`.
 
-## Checks and Reviewers:
+## Self-Review of the Diff:
 
-* [ ] Wait for lint, unit tests, and build checks to pass.
-* [ ] Add the right reviewers and any required code owners.
-* [ ] Keep the pull request small enough to review in one sitting when possible.
-* [ ] Reply to review comments with what you changed or why you did not.
+* [ ] You opened the Files tab and scrolled every file, including YAML and SQL.
+* [ ] Left-over `TODO`, `FIXME`, `debugger`, `fdescribe`, `xit` are gone or ticketed.
+* [ ] You did not change formatting in files you did not mean to touch (noisy diff).
+* [ ] Binary assets are reasonably sized; no 8MB PNG when a 40KB WebP would do.
+* [ ] `package.json` version bump matches the release process if you ship libraries.
 
-## Merge and Follow-Up:
+## Checks Before Requesting Review:
 
-* [ ] Squash or merge using the team convention.
-* [ ] Delete the remote branch after merge if that is the team rule.
-* [ ] Confirm staging or production deploy notes are added when needed.
-* [ ] Update the ticket status and notify QA or the product owner.
-* [ ] Watch logs and error tracking for a short time after deploy.
+* [ ] Lint, unit, and build jobs are green on this commit SHA.
+* [ ] You ran the new path locally with the same feature flags as staging.
+* [ ] Code owners / required reviewers are requested; optional reviewers are not blocking.
+* [ ] PR is not 80 files unless it is a generated/lockstep change you explain.
+* [ ] Conflicts with `main` are resolved; “merge commit” vs rebase matches team rule.
+
+## During Review:
+
+* [ ] Each comment is resolved with a reply: code change, or why you will not change it.
+* [ ] You do not force-push after someone started reviewing unless the team uses stacked PRs and you warn them.
+* [ ] Force-push, if allowed, uses `--force-with-lease`.
+* [ ] You do not resolve a comment without addressing it.
+
+## Merge:
+
+* [ ] Required approvals and status checks are actually green, not skipped.
+* [ ] Squash message still makes sense (not “fix comments” as the only commit).
+* [ ] You are not merging with `WIP`, `DO NOT MERGE`, or a failing migration on staging.
+* [ ] Linked ticket moves to the next column; QA has the preview URL or build number.
+* [ ] After merge, you confirm the deploy pipeline picked this SHA, then watch error tracker for 15 minutes.
+* [ ] Delete the remote branch if that is the repo setting.

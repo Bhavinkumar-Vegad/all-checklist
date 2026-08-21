@@ -1,67 +1,76 @@
-## Installation and Launch:
-* [ ] Test app installation from app stores (Google Play, App Store).
-* [ ] Verify smooth app launch without crashes or errors.
-* [ ] Test compatibility with different mobile devices and screen sizes.
-* [ ] Validate app behavior during first-time setup.
+## Install and First Launch:
 
-## User Interface (UI):
-* [ ] Check UI design and layout for consistency and user-friendliness.
-* [ ] Test responsiveness of UI elements on various screen orientations.
-* [ ] Validate proper alignment and spacing of UI components.
-* [ ] Test touch interactions, gestures, and animations.
-* [ ] Verify consistent branding and styling throughout the app.
-* [ ] Test transitions between app screens.
+* [ ] Fresh install vs update from previous store version (data migration, not a wipe unless you intend it).
+* [ ] First-run: permission prompts happen at the moment of need, not a wall of five dialogs.
+* [ ] Kill from recents and reopen: you land where the spec says (cold start vs restore).
+* [ ] Tablet / foldable / split-screen if you claim support; iPad does not look like a stretched iPhone unless that is the spec.
+* [ ] RTL and large Dynamic Type / Android font scale 1.3+: primary CTA still tappable.
 
-## Functionality:
-* [ ] Test navigation and user flows within the app.
-* [ ] Validate user input forms and data submission.
-* [ ] Test interactive elements, buttons, and controls.
-* [ ] Verify proper error handling and user feedback.
-* [ ] Test features specific to mobile devices (e.g., camera, GPS).
-* [ ] Validate push notifications and real-time updates.
+## Permissions (deny is more important than allow):
 
-## Performance:
-* [ ] Test app responsiveness and smoothness of animations.
-* [ ] Verify efficient resource usage, including memory and CPU.
-* [ ] Test app performance under different network conditions (3G, 4G, Wi-Fi).
-* [ ] Validate offline functionality and data synchronization.
-* [ ] Test app startup time and loading of content.
+* [ ] Camera/mic/location/photos/notifications: Allow, Don’t allow, and “Don’t ask again”.
+* [ ] After deny, the feature shows how to open Settings, not a crash.
+* [ ] iOS Photo Library Limited Access vs Full; Android photo picker vs legacy storage.
+* [ ] Location: while using vs always vs precise vs approximate (iOS 14+ / Android 12+).
+* [ ] Bluetooth/Nearby if you use it: the extra Android 12 permission.
 
-## Compatibility:
-* [ ] Test the app on different mobile platforms (iOS, Android).
-* [ ] Verify compatibility with different OS versions and updates.
-* [ ] Test app behavior on different screen sizes and resolutions.
-* [ ] Validate app functionality on various device models.
-* [ ] Test compatibility with different hardware configurations.
+## Interruptions:
+
+* [ ] Phone call, alarm, and Control Center overlay during payment / recording / navigation.
+* [ ] Rotation lock on/off; orientation change mid-form does not wipe input.
+* [ ] App switcher snapshot: no OTP, card number, or medical data in the preview (iOS snapshot privacy).
+* [ ] Background → foreground after 5 minutes: token refresh, not a stuck spinner.
+* [ ] Airplane mode, then restore: queued actions either send or explain.
+
+## Offline and Sync:
+
+* [ ] Airplane: which screens work; writes queue or fail clearly.
+* [ ] Conflict: two devices edit the same record offline.
+* [ ] Clock skew: device date set 2 days ahead (cert / token failures).
+* [ ] Large file upload: background, lock screen, and failure retry (not silent drop).
+
+## Push and Deep Links:
+
+* [ ] Cold start from a push vs already running: correct thread/screen, not just home.
+* [ ] Tapping an expired notification.
+* [ ] Universal Links / App Links: https URL opens the app when installed, web when not; `applinks:` associated domains are live.
+* [ ] Custom scheme: `myapp://` is not hijacked by another app if you still use it.
+* [ ] Email magic link / OTP autofill (iOS keyboard, Android SMS retriever).
+
+## Device Features:
+
+* [ ] Camera: front/back, missing camera tablet, simulator vs device.
+* [ ] GPS: indoor, mocked location (Android), permission revoked mid-session.
+* [ ] Biometrics: Face ID fail → passcode; no biometrics enrolled; backgrounded during prompt.
+* [ ] Share sheet / files / in-app browser: back returns to the app with state.
+
+## Store and OS Matrix (pick real devices, not only the newest flagship):
+
+* [ ] Oldest OS you support (API / iOS version in the store listing).
+* [ ] Notch, punch-hole, gesture nav vs 3-button, Samsung One UI vs Pixel.
+* [ ] Low storage: install and cache behavior.
+* [ ] Battery saver / Low Power Mode: timers, location, background fetch.
+
+## Performance and Heat:
+
+* [ ] Cold start to first interactive < the number you put in the PRD (measure, don’t guess).
+* [ ] Scroll 60fps on a mid-range Android, not only on your iPhone.
+* [ ] Memory warning: list screens after 20 minutes of use.
+* [ ] Wake locks / background location: battery drain over 30 minutes vs a competitor baseline if that is a claim.
 
 ## Security:
-* [ ] Conduct security testing to identify vulnerabilities (e.g., insecure storage, data leakage).
-* [ ] Test user data protection and encryption mechanisms.
-* [ ] Validate secure communication over HTTPS.
-* [ ] Test app permissions and user data access.
-* [ ] Verify proper authentication and session management.
-* [ ] Test app behavior under different security settings.
 
-## Localization and Internationalization:
-* [ ] Test the app with different language and region settings.
-* [ ] Verify proper text translation and layout adjustments.
-* [ ] Test date, time, and number formats for different locales.
-* [ ] Validate that UI elements adapt to various languages and scripts.
-* [ ] Test currency and unit conversions for international users.
+* [ ] Traffic is HTTPS; you tried a proxy (user installed CA) if you claim pinning — pinning fails gracefully on cert rotate.
+* [ ] Tokens not in logs; screenshots of SharedPreferences/Keychain dumps are not plaintext passwords.
+* [ ] Jailbreak/root detection only if product requires it; false positives on stock Samsung.
+* [ ] Clipboard: OTP is not left forever if you copy it.
 
-## Interruptions and Device Features:
-* [ ] Test incoming call, SMS, and notification interruptions during key flows.
-* [ ] Test app behavior when switching between Wi-Fi and mobile data.
-* [ ] Verify camera, microphone, location, and notification permissions can be granted, denied, and changed later.
-* [ ] Test biometric or PIN unlock if the app supports it.
-* [ ] Verify deep links and app links open the correct screen.
+## i18n:
 
-## Battery and Performance Impact:
-* [ ] Test app impact on device battery life.
-* [ ] Measure app performance impact on device resources.
-* [ ] Verify app behavior during low battery and background usage.
+* [ ] Pseudo-localization: truncation on tab bar labels (4–5 items).
+* [ ] Region: India 12-hour vs 24-hour; Saudi week start; currency symbol position.
 
-## Documentation and Reporting:
-* [ ] Document testing strategies, scenarios, and test cases.
-* [ ] Provide detailed reports on testing results, issues found, and resolutions.
-* [ ] Share testing insights with development and QA teams for continuous improvement.
+## Store Build:
+
+* [ ] Release vs debug: logging, inspector, staging API URL cannot ship.
+* [ ] Version code / CFBundleVersion incremented; you cannot upload a lower code.

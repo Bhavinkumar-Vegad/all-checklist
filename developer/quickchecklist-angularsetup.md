@@ -129,10 +129,15 @@ ng serve
 ~~~
 * [ ] Open a web browser and visit `http://localhost:4200` to see your application running.
 
-## After Setup:
+## After Setup (the parts that bite you in week two):
 
 * [ ] Confirm the app reloads when you change a component file.
-* [ ] Generate a feature module or standalone component with `ng generate` instead of creating files by hand.
-* [ ] Configure environments (`environment.ts` / `environment.prod.ts` or `application.json` based on your Angular version).
-* [ ] Enable linting with `ng lint` and agree on formatting rules with the team.
-* [ ] Initialize git and create the first commit if the project is new.
+* [ ] Generate features with `ng generate`; do not hand-create files that miss `standalone`/module wiring.
+* [ ] `fileReplacements` / application environments: production API URL is not still `localhost`.
+* [ ] Lint on CI. Recent Angular does not always ship `ng lint` until you add the ESLint schematic — add it or use another linter, but run it in CI.
+* [ ] Strict templates (`strictTemplates`) on if the team uses TypeScript strictly.
+* [ ] Interceptors: auth token, 401 redirect, and correlation id — decided before the fifth service copies `HttpClient` headers.
+* [ ] `providedIn: 'root'` vs component providers so you do not get two copies of a stateful service.
+* [ ] `ng build` (production configuration) locally; budget warnings for bundle size are treated as real.
+* [ ] `index.html` title/favicon not left as the CLI default for client demos.
+* [ ] Initialize git; ignore `/dist`, `/tmp`, `.angular`.

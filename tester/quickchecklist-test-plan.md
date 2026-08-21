@@ -1,32 +1,42 @@
-## Plan Inputs:
+## Scope Lock:
 
-* [ ] Confirm the feature, build, and environments in scope.
-* [ ] List in-scope and out-of-scope items with the product owner.
-* [ ] Identify risks, dependencies, and third-party systems.
-* [ ] Agree entry and exit criteria for this test cycle.
+* [ ] In-scope stories/tickets listed by ID; out-of-scope is written (not “we’ll see”).
+* [ ] Environments: which one is test-of-record; which is only for debugging.
+* [ ] Browser/device/OS matrix with owners; “all browsers” is replaced with a finite list.
+* [ ] Roles in scope (guest, user, manager, admin, API client).
+* [ ] Data classification: can testers use production copies? If yes, who approved?
 
-## Coverage:
+## Risks That Change the Plan:
 
-* [ ] Map test cases to requirements or user stories.
-* [ ] Include positive, negative, and permission cases.
-* [ ] Include accessibility and basic security checks where they apply.
-* [ ] Include browser, device, or OS targets with owners.
+* [ ] New auth, payments, migrations, or file parsing → extra security/perf cases.
+* [ ] Third parties (Stripe, Firebase, SSO) → sandbox limits and who owns vendor access.
+* [ ] Tight deadline → which cases are must vs skip, signed by PM.
+
+## Coverage Design:
+
+* [ ] Each in-scope requirement/AC maps to at least one case ID (traceability column).
+* [ ] Negative cases: validation, authz deny, duplicate submit, stale tab.
+* [ ] State cases: empty, 1, many, max, expired, cancelled.
+* [ ] Accessibility: at least keyboard + one AT pass on the new UI, not a separate “maybe later”.
+* [ ] API: contract cases if UI is not the only client.
+* [ ] Non-functional: what you will measure (p95, error rate) and what you will not (full soak) this cycle.
 
 ## Data and Environments:
 
-* [ ] List required accounts, roles, and seed data.
-* [ ] Confirm a refresh strategy so testers do not block each other.
-* [ ] Document how to reset payments, emails, or SMS sandboxes.
+* [ ] Named accounts per role; 2FA/reset path documented so testers are not locked out.
+* [ ] Refresh policy: who resets staging and when; testers warned before wipe.
+* [ ] Feature flags: matrix of on/off if both must work.
+* [ ] Time travel: how to test expiry without waiting 30 days (fixture, admin tool).
+* [ ] Observability access: testers can see logs/Sentry for the test env.
 
-## Execution:
+## Execution Rules:
 
-* [ ] Assign owners and dates for each suite.
-* [ ] Define severity and priority rules for defects.
-* [ ] Agree how daily status will be reported.
-* [ ] Plan regression and smoke passes around the freeze date.
+* [ ] Severity/priority definitions (user cannot proceed vs cosmetic).
+* [ ] Bug template: SHA, env, user, steps, expected, actual, logs.
+* [ ] Daily standup artifact: executed, passed, failed, blocked, not-run.
+* [ ] Entry: smoke green. Exit: no open Sev-1, Sev-2 waived in writing, coverage % or “all must-run IDs done”.
 
-## Sign-Off:
+## UAT Handoff:
 
-* [ ] Record remaining open defects and residual risk.
-* [ ] Get written go / no-go from QA, product, and engineering leads.
-* [ ] Archive the plan, results, and known issues with the release.
+* [ ] UAT script is not a dump of 400 QA cases; it is the business scenarios.
+* [ ] Known defects UAT will hit are listed so they do not file duplicates.

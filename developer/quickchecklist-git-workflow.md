@@ -1,36 +1,42 @@
-## Daily Hygiene:
+## Daily:
 
-* [ ] Pull or fetch the latest changes before starting work.
-* [ ] Create a branch with a clear name, such as `feature/login-otp` or `fix/cart-total`.
-* [ ] Make small, focused commits with messages that explain why.
-* [ ] Do not commit generated files, secrets, or personal IDE config.
-* [ ] Run tests locally before you push.
+* [ ] `git fetch --prune` before you branch so you do not build on a deleted remote.
+* [ ] Do not commit `node_modules`, `vendor`, `.next`, `build`, `coverage`, or `*.log`.
+* [ ] Commit message subject ≤ 72 chars, body explains why if the diff is not obvious.
+* [ ] Do not commit `git update-index --assume-unchanged` hacks for local config; use `.env.local`.
+* [ ] If you changed line endings, do not convert the whole repo; check `.gitattributes`.
 
 ## Branching:
 
-* [ ] Use the agreed model (trunk-based, GitHub Flow, or Git Flow).
-* [ ] Keep feature branches short-lived.
-* [ ] Protect main and require reviews on that branch.
-* [ ] Never force-push shared branches unless the team explicitly agrees.
-* [ ] Delete merged branches to keep the remote clean.
+* [ ] `main` is protected: no direct push, required reviews, required status checks.
+* [ ] Long-lived `develop` vs trunk-based: you are not mixing both without a written rule.
+* [ ] Hotfix branches are cut from the production tag, not from an unreleased `main` if prod is behind.
+* [ ] You never `--force` to `main` or `release/*`.
+* [ ] `--force-with-lease` only on your personal branch, after checking nobody else pushed.
+* [ ] Submodules: pointer commit is updated intentionally; you did not leave a detached dirty submodule.
 
-## Collaboration:
+## History and Secrets:
 
-* [ ] Open a pull request early if you need design feedback.
-* [ ] Rebase or merge main often so conflicts stay small.
-* [ ] Resolve conflicts carefully and re-run tests after resolving them.
-* [ ] Do not rewrite history on a branch that others are using.
+* [ ] If a secret was committed, rotate it; removing it in a later commit is not enough.
+* [ ] Do not `git rebase` a branch that is the base of someone else’s open PR without coordinating.
+* [ ] `git revert` for shared history; `reset --hard` only for unpushed local commits.
+* [ ] Large file: Git LFS or artifact storage; do not push a 200MB video to git.
 
-## Releases and Hotfixes:
+## Merging:
 
-* [ ] Tag releases with a version the team can identify in logs and stores.
-* [ ] Cherry-pick hotfixes only when a full merge is too risky.
-* [ ] Record the production commit hash in the release notes.
-* [ ] Confirm CI runs on release tags and hotfix branches.
+* [ ] Merge strategy is consistent (squash vs merge commits vs rebase) so `git bisect` still works.
+* [ ] “Update branch” on GitHub does not sneak in unrelated main commits you have not tested.
+* [ ] After resolving conflicts, re-run tests; do not assume both sides of a conflict were kept correctly (especially lockfiles and migrations).
+* [ ] Migration files: never rewrite a migration that already ran in staging/prod; add a new one.
 
-## Recovery:
+## Tags and Releases:
 
-* [ ] Know how to undo a local unpushed commit without losing work.
-* [ ] Know who can revert a bad merge on main.
-* [ ] Keep backups or mirrors if the repo is business-critical.
-* [ ] Document the branching rules in the project README.
+* [ ] Tags are annotated (`v1.4.2`) and match the changelog.
+* [ ] Do not move a published tag; cut `v1.4.2-hotfix.1`.
+* [ ] Release branch includes only cherry-picks that have a ticket.
+
+## Recover:
+
+* [ ] You know `reflog` for a commit you thought you lost locally.
+* [ ] Orphaned feature flags/branches older than N days are deleted on a schedule.
+* [ ] CODEOWNERS and branch protection were not bypassed with an admin merge unless incident-documented.

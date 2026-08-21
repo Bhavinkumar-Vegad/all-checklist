@@ -1,31 +1,43 @@
-## Plan:
+## Brief:
 
-* [ ] Define the campaign goal (awareness, traffic, leads, or sales).
-* [ ] Name the audience and the one message they should remember.
-* [ ] Choose platforms on purpose, not every network by default.
-* [ ] Set dates, owners, and what "done" looks like.
+* [ ] One KPI (CTR, CPC, followers are not a KPI unless the brief is awareness-only with a number).
+* [ ] Audience: platform + geo + language; “everyone 18–54” is not an audience.
+* [ ] Offer and landing URL are final before creative is “done”.
+* [ ] Paid vs organic vs influencer: separate budgets and disclosures.
 
-## Creative:
+## Creative by Network:
 
-* [ ] Copy fits each network's length and tone.
-* [ ] Visuals are sized correctly and readable on a phone.
-* [ ] CTA and landing URL match the post promise.
-* [ ] Hashtags, mentions, and UTM links are consistent.
+* [ ] Safe zones: Instagram/TikTok UI does not cover the CTA text.
+* [ ] First 2 seconds of video have motion + captioning (sound off).
+* [ ] Aspect ratios: 1:1, 4:5, 9:16, 16:9 exported separately, not stretched.
+* [ ] Text on image is readable at thumbnail size; no 8-word essay on a square.
+* [ ] Brand handle, #campaign, and UTM convention (`utm_source=instagram&utm_medium=social&utm_campaign=...`) documented.
+* [ ] Link in bio / Stories swipe-up / collab post: the URL actually updates at go-live.
+
+## Ads Manager Traps:
+
+* [ ] Pixel/events match the landing thank-you; iOS ATT / consent mode considered.
+* [ ] Audience excludes converters if the goal is prospecting.
+* [ ] Frequency cap or you will burn the list.
+* [ ] Daily budget vs lifetime; timezone of the ad account vs the audience.
+* [ ] Duplicate ad sets are not competing with identical targeting (cannibalization).
+* [ ] Dark posts vs page posts: comments routing is owned.
+
+## Community:
+
+* [ ] First-hour reply owner in the same timezone as the audience.
+* [ ] Crisis: who hides comments / legal take-down; screenshot policy.
+* [ ] User-generated content: license to reshare.
 
 ## Compliance:
 
-* [ ] Disclosures are included for ads, affiliates, or partnerships.
-* [ ] You have rights to images, music, and customer quotes.
-* [ ] Comments and DMs have a reply plan.
+* [ ] Paid partnership / #ad / #sponsored where required.
+* [ ] Claims in the creative match the landing page and legal deck.
+* [ ] Music licensed for ads (personal TikTok sound ≠ ad license).
+* [ ] Political/finance/health categories: special ad category filled correctly.
 
-## Launch:
+## Post-Launch:
 
-* [ ] Schedule or publish at the planned local time.
-* [ ] Boost or ads targeting is checked twice before spend starts.
-* [ ] Tracking links and pixels are verified with a test click.
-
-## After:
-
-* [ ] Capture performance against the original goal.
-* [ ] Save what to reuse and what to drop next time.
-* [ ] Reply to comments in the first hours if the post is live.
+* [ ] 24h: creative with CTR/CPA outliers paused or iterated.
+* [ ] UTM in analytics: sessions land on the campaign page, not home.
+* [ ] Creative + copy archived with performance so you do not reinvent a loser.

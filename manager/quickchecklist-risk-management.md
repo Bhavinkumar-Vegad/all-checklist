@@ -1,26 +1,28 @@
-## Identify:
+## Write Risks So They Are Actionable:
 
-* [ ] List risks to timeline, budget, quality, security, and reputation.
-* [ ] Include vendor, people, and single-point-of-failure risks.
-* [ ] Write each risk as cause, event, and impact.
-* [ ] Assign an owner who can actually reduce the risk.
+* [ ] Format: *If [event], then [impact on goal/date/money/safety], because [cause].*
+* [ ] Not a risk: “quality might suffer”. That is a complaint. Rewrite with a trigger.
+* [ ] Include: key-person, vendor, regulator, data loss, ranking/SEO, app-store reject, fraud, capacity, reputation.
+* [ ] Assumptions in the RAID are tagged (e.g. “API v2 ships 12 Sep — not confirmed by vendor”).
 
-## Assess:
+## Score:
 
-* [ ] Rate likelihood and impact with the team's agreed scale.
-* [ ] Mark which risks would stop the release if they occurred.
-* [ ] Separate issues that already happened from risks that might happen.
+* [ ] Likelihood and impact use the same scale every time (1–5 with definitions).
+* [ ] Score after mitigation is filled; otherwise you only have inherent risk theatre.
+* [ ] Top 5 get owners who do not have to ask you for permission to spend time.
 
-## Respond:
+## Responses:
 
-* [ ] Choose mitigate, transfer, accept, or avoid for each top risk.
-* [ ] Write a trigger that means the risk is becoming real.
-* [ ] Write a fallback action and who executes it.
-* [ ] Put mitigation work on the board, not only in a slide.
+* [ ] Mitigate: concrete work on the board (spike, extra test env, contract clause).
+* [ ] Transfer: insurance, vendor SLA, another team — named.
+* [ ] Accept: named accepter, expiry date, what would un-accept it.
+* [ ] Avoid: cut scope; the cut is visible on the roadmap.
+* [ ] Trigger: metric or date (“error rate > 2% for 10 min”, “no staging access by Fri”).
+* [ ] Play: first three steps and who is called.
 
-## Review:
+## Cadence:
 
-* [ ] Review top risks in weekly status, not only at kickoff.
-* [ ] Close risks that are no longer relevant.
-* [ ] Escalate risks the team cannot handle alone.
-* [ ] Keep a short log of what changed since last review.
+* [ ] Risks reviewed in weekly ops, not only at kickoff.
+* [ ] Closed risks stay in the log with date and reason (audit / “why did we forget”).
+* [ ] New risks from incidents are added within 24h of the incident review.
+* [ ] Steering pack shows movement (up/down/new), not a static heatmap screenshot.

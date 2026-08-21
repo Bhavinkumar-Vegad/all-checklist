@@ -1,32 +1,40 @@
-## Positioning:
+## Narrative:
 
-* [ ] Write a one-sentence value proposition the team can reuse.
-* [ ] Confirm target audience, pricing, and what is not included.
-* [ ] Align product, marketing, sales, and support on the same story.
+* [ ] One-liner used by CEO, sales, and the tweet is the same product, not three products.
+* [ ] Pricing public vs “contact us” is agreed; sales sheets match the site.
+* [ ] Competitive claims have a source or they are cut.
+* [ ] Embargo: press cannot publish before the product is actually clickable.
 
-## Assets:
+## Surfaces:
 
-* [ ] Landing page, demo, or store listing is ready.
-* [ ] Screenshots, logo, and short demo video are final.
-* [ ] FAQ and objection handling exist for sales and support.
-* [ ] Press or launch post is fact-checked.
+* [ ] Marketing site, in-app changelog, app stores, docs, status page — owners and freeze time.
+* [ ] Screenshots are from prod-like data, not `John Doe` and `lorem`.
+* [ ] Store listing: age rating, privacy questionnaire, encryption declarations match what the binary does.
+* [ ] Docs: “new” API fields exist on prod; code samples use live endpoints.
 
-## Channels:
+## Demand Gen:
 
-* [ ] Email, social, ads, and community posts are scheduled.
-* [ ] Partner or influencer mentions have a date and talking points.
-* [ ] Product Hunt, app stores, or directories are submitted if they apply.
-* [ ] Analytics and conversion events are tested.
+* [ ] Waitlist → customer conversion email is queued, not drafted at T-1h.
+* [ ] Ads paused until smoke on prod is green (or you waste spend on 500s).
+* [ ] Affiliate/partner kits: UTM and disclosure.
+* [ ] Community (Reddit/HN/Product Hunt): who replies, and the “we’re the founders” rule.
+
+## Ops at T-0:
+
+* [ ] Billing: tax, failed card, dunning, proration — one test purchase on prod if you can refund.
+* [ ] Feature flag: 0% → 10% → 100% owners; metric that stops the ramp.
+* [ ] Support macros, SLA, and war room channel.
+* [ ] Legal: DPA, privacy policy, cookie list updated if you added a processor.
 
 ## Day Of:
 
-* [ ] Site, signup, billing, and login work on production.
-* [ ] Support coverage is staffed for the launch window.
-* [ ] A rollback or "pause ads" owner is named.
-* [ ] Announce only after smoke checks pass.
+* [ ] DNS/CDN/certificates; no leftover `noindex`.
+* [ ] Real user can sign up without a staff override.
+* [ ] Analytics: first session from outside the office (VPN/incognito).
+* [ ] Rollback + “pause ads” + “unfeature on homepage” are three different buttons with owners.
 
-## After:
+## T+48h:
 
-* [ ] Collect feedback from users and the sales team.
-* [ ] Publish a short recap of what shipped and what is next.
-* [ ] Move leftover launch tasks onto the backlog.
+* [ ] Qualitative: 10 support tickets categorized (confusing vs broken).
+* [ ] Quantitative: activation funnel vs the number you put on the slide.
+* [ ] Thank-you to waitlist/beta; public known issues if you shipped with them.

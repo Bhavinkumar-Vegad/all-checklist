@@ -1,33 +1,44 @@
-## Release Scope:
+## Freeze:
 
-* [ ] Freeze the list of features, fixes, and known exclusions.
-* [ ] Confirm version number, release name, and target environments.
-* [ ] List migrations, config changes, and feature flags that must ship together.
-* [ ] Identify rollback or feature-toggle off as a real option.
+* [ ] Change list is a ticket dump with owners, not a slide that says “improvements”.
+* [ ] Explicitly not shipping: listed so sales/CS do not promise them on the webinar.
+* [ ] Version: semver/build/store version codes for iOS/Android/web all recorded (they often diverge).
+* [ ] Flag matrix: what is on in prod at T+0 vs T+24h ramp.
+* [ ] Migration + search reindex + cache flush + cron: ordered, with who runs them.
 
-## Quality:
+## Quality Bar:
 
-* [ ] Confirm QA sign-off or a written list of remaining risks.
-* [ ] Confirm critical defects are fixed or explicitly accepted.
-* [ ] Confirm staging matches production closely enough for the smoke pass.
-* [ ] Confirm support has a short list of expected user-facing changes.
+* [ ] Exit criteria from the test plan are copied here; “QA is done” is not a criterion.
+* [ ] Sev-1 = no release; Sev-2 = named accepter and user workaround.
+* [ ] Perf budget: p95 of the hot path vs last release, not “felt fine on office wifi”.
+* [ ] Accessibility/security tickets that were “next sprint” for three sprints are either in or accepted in writing.
+* [ ] Staging data volume is closer to prod for the one query you know is slow.
 
-## Communication:
+## Comms:
 
-* [ ] Draft release notes for internal and, if needed, customer audiences.
-* [ ] Notify customer success, marketing, and on-call before the window.
-* [ ] Agree who announces go-live and who handles "is it down?" questions.
-* [ ] Schedule a war-room or chat channel for the deploy window.
+* [ ] Internal notes: what support should say, including “this button moved”.
+* [ ] Customer notes: user-visible behavior only; no git jargon.
+* [ ] Status page: pre-approved maintenance text if you expect blips.
+* [ ] Marketing/sales enablement date is not the same hour as an untested migrate.
+* [ ] Who tweets / emails customers if you rollback.
 
-## Go-Live:
+## Window:
 
-* [ ] Confirm deploy owner, verifier, and rollback owner.
-* [ ] Run production smoke tests immediately after deploy.
-* [ ] Watch errors, latency, and a business KPI for an agreed period.
-* [ ] Mark the release done only after smoke and monitoring look healthy.
+* [ ] Not Friday 16:00 unless you have weekend on-call that agreed.
+* [ ] Not during the customer’s peak (timezone, month-end, campaign).
+* [ ] Vendor change freezes (cloud, payment, Apple) checked.
+* [ ] Dual control: one deploys, another watches metrics; same person is documented if unavoidable.
 
-## After:
+## Rollback Is a Plan, Not a Hope:
 
-* [ ] File follow-up tickets for leftover issues.
-* [ ] Hold a short review if anything unexpected happened.
-* [ ] Update runbooks with what you learned.
+* [ ] Previous artifact id is known and a dry-run happened on staging.
+* [ ] DB rollback vs roll-forward: if you cannot reverse, the forward fix script is reviewed.
+* [ ] Feature flag off is the first lever for UI/API that supports it; you tested the off path this week.
+* [ ] CDN/asset rollback if HTML caches old JS.
+
+## T+0 to T+24h:
+
+* [ ] Smoke on prod with a canary user / region.
+* [ ] Watch: 5xx, p95, queue lag, error tracker, payment success rate, sign-up rate — pick the ones this release can break.
+* [ ] CS queue: spike in “can’t log in” in the first hour is an incident, not a ticket pile.
+* [ ] Close the release only after the watch window, not after the pipeline is green.

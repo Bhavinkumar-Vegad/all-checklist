@@ -1,27 +1,40 @@
-## Align on Why:
+## Problem and Success:
 
-* [ ] Restate the business problem, not only the requested feature list.
-* [ ] Confirm success metrics and how they will be measured.
-* [ ] Identify users, buyers, and internal operators of the product.
-* [ ] Record what is explicitly out of scope for this phase.
+* [ ] “Why now” and “what happens if we do nothing” are written, not only a feature list.
+* [ ] Success metric: numerator, denominator, data source, and who pulls the dashboard.
+* [ ] Leading vs lagging: you are not using “revenue in 6 months” as the only sprint-1 metric.
+* [ ] Non-goals: named competitors’ features you will not clone in v1.
+* [ ] Kill criteria: what would make you stop after discovery.
 
-## People and Cadence:
+## Stakeholders:
 
-* [ ] Name a single product owner for decisions.
-* [ ] Name engineering, design, QA, and stakeholder contacts.
-* [ ] Agree meeting cadence, tools, and where documents live.
-* [ ] Agree how urgent issues will be raised.
+* [ ] One accountable product owner (internal sponsor or client PO) for scope; a RACI for legal, security, finance, ops, brand.
+* [ ] Decision SLA: how long until a blocked question is escalated (48h / next steering).
+* [ ] Comms: where status lives (doc + cadence). Chat is not the system of record.
+* [ ] Customer/sponsor access: who can talk to them and what is off-limits.
 
-## Scope and Constraints:
+## Constraints:
 
-* [ ] Capture must-have vs nice-to-have for the first release.
-* [ ] List known technical, legal, brand, and budget constraints.
-* [ ] Identify third-party accounts, licenses, and access that are still missing.
-* [ ] Agree a target date and what "done" means for that date.
+* [ ] Date is a real constraint (conference, law, contract) vs an aspiration; say which.
+* [ ] Budget: licenses, cloud, agency, overtime — who signs.
+* [ ] Must-use tech (existing ERP/SSO, on-prem, data residency) written down so architecture does not rediscover it in week 4.
+* [ ] Brand/accessibility/security questionnaires that take weeks are started now.
 
-## Kickoff Artifacts:
+## Access on Day 1:
 
-* [ ] Share a one-page brief after the meeting.
-* [ ] Create the project board, repo access, and shared drive.
-* [ ] Schedule discovery, design review, and first demo.
-* [ ] Confirm everyone knows the next action and owner.
+* [ ] Repo, design files, analytics, error tracker, cloud, app stores, DNS, email domain, Slack channels.
+* [ ] Production-like data: anonymization rules agreed before anyone copies prod.
+* [ ] Third-party accounts: who owns the contract and the 2FA.
+
+## Discovery vs Build:
+
+* [ ] Open questions listed with an owner and a due date (not “TBD in agile”).
+* [ ] Spike time-boxes are in the plan if unknowns are load-bearing.
+* [ ] First demo date is on the calendar before engineers start a three-week silent build.
+
+## Artifacts After the Call:
+
+* [ ] One-pager: problem, users, v1 scope, out of scope, metric, dates, owners.
+* [ ] RAID log started (risks, assumptions, issues, dependencies).
+* [ ] Tooling: board columns match how you actually work; dummy tickets are deleted.
+* [ ] Next meeting is booked with an agenda, not “we’ll find a slot”.

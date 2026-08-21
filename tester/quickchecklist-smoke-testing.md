@@ -1,26 +1,38 @@
-## Build and Access:
+## Identify the Build:
 
-* [ ] Confirm you have the correct build, URL, or app package.
-* [ ] Confirm test users can log in on this environment.
-* [ ] Confirm third-party test keys (payments, SMS, email) are pointed at sandbox.
+* [ ] You are on the URL/artifact named in the deploy message, not a bookmarked staging.
+* [ ] SHA or version is visible (footer, `/health`, about screen) and matches CI.
+* [ ] Feature flags for the smoke scope are on; unrelated experiments are noted.
 
-## Critical Path:
+## Blockers (stop the release if any fail):
 
-* [ ] App or site loads without a blank screen or uncaught error.
-* [ ] Sign up or login works for a standard user.
-* [ ] The main landing screen after login is usable.
-* [ ] A core create/read/update action saves and displays again after refresh.
-* [ ] Logout works and the next user cannot see the previous session.
+* [ ] TLS certificate is valid; mixed-content is not breaking login.
+* [ ] Home/landing loads; no white screen, no continuous 5xx in network tab.
+* [ ] Login works for a standard user; error on bad password is sane (no 500, no stack trace).
+* [ ] Session cookie is set; refresh keeps you logged in if that is the product behavior.
+* [ ] The #1 money or mission path completes once (checkout, create project, send message — whatever you sell).
+* [ ] Logout (or token expiry) prevents using the back button to see PII if that is required.
 
-## Obvious Breakage:
+## App Shell:
 
-* [ ] Primary navigation links open the right pages.
-* [ ] Forms show validation instead of a silent failure.
-* [ ] Images, fonts, and API calls are not all failing in the network tab.
-* [ ] Mobile viewport is not completely unusable if the product is responsive.
+* [ ] Primary nav links return 200, not 404 on renamed routes this release.
+* [ ] API host is the right environment (no accidental prod API from staging UI or the reverse).
+* [ ] Static assets (JS/CSS) are not 404 after a CDN/cache deploy.
+* [ ] Time/clock: page does not show 1970 or “Invalid Date” in header widgets.
+
+## Data and Jobs:
+
+* [ ] A write persists after hard refresh (not only in memory).
+* [ ] If you have a queue: one worker is alive (dummy job or admin “queue depth”).
+* [ ] Email/SMS sandbox: one notification is received or visibly queued, if the release touches that.
+
+## Integrations:
+
+* [ ] Webhook URL health or “test connection” for the one integration in this release.
+* [ ] OAuth callback does not fail with `redirect_uri_mismatch` after an env change.
 
 ## Decision:
 
-* [ ] If smoke fails, stop deeper testing and report the build as blocked.
-* [ ] If smoke passes, proceed to regression or exploratory testing.
-* [ ] Note environment issues separately from product defects.
+* [ ] Record pass/fail with timestamp and tester name.
+* [ ] Fail = blocked: do not start full regression; ping deploy owner with SHA and screenshot of the 5xx/white screen.
+* [ ] Pass: hand off to regression/UAT with the same SHA.

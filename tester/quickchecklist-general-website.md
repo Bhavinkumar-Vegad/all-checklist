@@ -1,58 +1,72 @@
-## Checklist for Content:
-* [ ] Check that all pages have relevant and engaging content that aligns with the website's purpose.
-* [ ] Check for spelling and grammatical errors.
-* [ ] Check for broken links and images.
-* [ ] Check that images have appropriate alt tags.
-* [ ] Check that all forms are working properly.
+## Content and Trust:
 
-## Checklist for SEO:
-* [ ] Check that all pages have unique and descriptive meta titles and descriptions.
-* [ ] Check that all pages have appropriate headings and subheadings.
-* [ ] Check that all images have optimized alt tags and file names.
-* [ ] Check that all URLs are SEO-friendly and have appropriate keywords.
-* [ ] Check that the website has a sitemap and that it's properly submitted to search engines.
-* [ ] Check that the website has a robots.txt file that's properly configured.
+* [ ] Phone, email, address, GST/VAT, and hours match Google Business / letterhead — not an old landing page.
+* [ ] Duplicate H1s, lorem, “Coming soon”, and unpublished team bios are gone.
+* [ ] Legal names of products/partners are spelled as in the contract.
+* [ ] Blog/news dates are real; future-dated posts are intentional.
+* [ ] 404 and 500 pages are branded and include a path home / contact — not the hosting default.
 
-## Checklist of Basic Functionality:
-* [ ] Check that all links and buttons are working properly.
-* [ ] Check that all forms are working properly.
-* [ ] Check that all pages are loading quickly.
-* [ ] Check that the website is responsive and mobile-friendly.
-* [ ] Check that the website is accessible to all users, including those with disabilities.
+## Links and Assets:
 
-## Checklist for UI/UX:
-* [ ] Check the design and layout of the website for consistency and ease of use.
-* [ ] Check that all text is legible and easy to read.
-* [ ] Check that all images are high quality and properly sized.
-* [ ] Check that all elements are properly aligned and spaced.
-* [ ] Check that the website has a clear and easy-to-use navigation menu.
-* [ ] Check that the website has a search function that works properly.
+* [ ] Crawl or a link checker: no 404, 403, or redirect chains > 1 on primary nav + footer.
+* [ ] `mailto:` and `tel:` work on mobile; tel uses country code.
+* [ ] PDFs/docs open; they are not a 50MB uncompressed scan.
+* [ ] Social icons go to the live profiles, not the agency’s placeholder.
+* [ ] Logo click → home; favicon present (and not the framework default).
 
-## Checklist for Security:
-* [ ] Check that the website has a valid SSL certificate.
-* [ ] Check that all forms have proper security measures in place, such as reCAPTCHA.
-* [ ] Check that the website is properly secured against common attacks, such as SQL injection and cross-site scripting.
+## Forms (contact, quote, newsletter, careers):
 
-## Checklist for Performance:
-* [ ] Check that the website is loading quickly.
-* [ ] Check that all images and files are properly compressed.
-* [ ] Check that the website is properly optimized for search engines.
-* [ ] Check that the website is properly cached to improve performance.
+* [ ] JS off: either HTML5 validation + server, or a clear “enable JS” — not a dead button.
+* [ ] Autocomplete attributes on name/email/address.
+* [ ] File upload on careers: size/type; thank-you does not expose the file URL as public listing.
+* [ ] Spam: honeypot/rate limit/captcha — you can still submit as a human.
+* [ ] Confirmation email (if promised) arrives; it is not in spam only because SPF is missing.
+* [ ] Success URL is unique if ads need a conversion page.
 
-## Checklist for Analytics:
-* [ ] Check that the website has analytics software installed, such as Google Analytics.
-* [ ] Check that the analytics software is properly configured to track relevant metrics.
-* [ ] Check that the analytics software is properly integrated with other tools, such as Google Ads and Search Console.
-* [ ] Check that cookie consent is respected and analytics only fire after the user accepts, if required.
+## Nav and IA:
 
-## Checklist for Legal and Trust:
-* [ ] Check that Privacy Policy, Terms, and cookie policy pages are linked in the footer.
-* [ ] Check that contact details, address, or support email are accurate.
-* [ ] Check that forms show a clear success or failure message after submit.
-* [ ] Check that a custom 404 page exists and includes a path back to home.
+* [ ] Current page is indicated; deep pages have breadcrumbs or a way up.
+* [ ] Mobile menu: open, close, lock scroll, no off-screen focus trap after close.
+* [ ] Search: 0 results, typo, special characters; results are relevant not a 500.
+* [ ] Language switcher keeps you on the equivalent page, not always home.
 
-## Checklist for Accessibility:
-* [ ] Check that all interactive elements can be used with a keyboard.
-* [ ] Check that heading order is logical (one h1, then h2, then h3).
-* [ ] Check that form fields have visible labels, not only placeholders.
-* [ ] Check that error messages are associated with the related field.
+## SEO technical (launch-day):
+
+* [ ] Unique title/description; no “Home | Home | Home”.
+* [ ] One H1; heading order is not used as a font-size hack only.
+* [ ] Canonical + https + host (www vs apex) match; no mixed sitemap hosts.
+* [ ] robots.txt does not Disallow `/` on production; staging is noindex.
+* [ ] XML sitemap submitted; it does not list noindex or 404 URLs.
+* [ ] OG tags: debugger preview is not a relative URL or localhost.
+
+## Visual:
+
+* [ ] Overlap at 320px: cookie banner vs CTA vs chat widget — you can still click “Buy”.
+* [ ] Images: no stretched logos, no watermark stock, width/height to avoid CLS.
+* [ ] Hover/focus on buttons; visited links if that is in the design system.
+* [ ] Horizontal scroll is not caused by a 1400px hero on mobile.
+
+## Performance:
+
+* [ ] LCP image is compressed and not a 4000px PNG.
+* [ ] Fonts: `font-display` so text is not invisible for seconds.
+* [ ] Third-party scripts (chat, pixel, A/B) do not block first paint without a reason.
+
+## Security / hygiene:
+
+* [ ] Valid cert; HSTS only if you mean it.
+* [ ] Admin `/wp-admin` or `/admin` is not trivially brute-forceable (rate limit / MFA).
+* [ ] Directory listing off; `.git` / `.env` not public.
+* [ ] Cookie banner: non-essential pixels wait for consent if you claim GDPR.
+
+## Analytics:
+
+* [ ] Pageview on SPA route change if it is an SPA.
+* [ ] Thank-you conversion fires once.
+* [ ] Cross-domain / referral exclusion so payment gateways do not steal sessions.
+
+## Accessibility:
+
+* [ ] Keyboard through header, menu, form, footer.
+* [ ] Alt on content images; empty alt on decorative.
+* [ ] Contrast on overlay text on photos.
